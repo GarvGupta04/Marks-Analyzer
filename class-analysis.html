@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Performance Analyzer</title>
+    <link rel="stylesheet" href="class-analysis.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="class-analysis.js" defer></script>
+</head>
+
+<body>
+    <header class="hero">
+        <a class="back-link" href="/">← Individual Marks Analyzer</a>
+        <h1>Class Performance Analyzer</h1>
+        <p>Upload student marks and discover insights with Data Science.</p>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Upload student data</h2>
+            <p>Choose a CSV file with a Student column and subject marks.</p>
+
+            <form id="uploadForm">
+                <input id="csvFile" type="file" accept=".csv" required>
+                <button type="submit">Analyze Class</button>
+            </form>
+
+            <p id="status" role="status"></p>
+            <a href="/sample_marks.csv" download>Download sample CSV</a>
+        </section>
+
+        <section id="results" hidden>
+            <h2>Class Overview</h2>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span>Students</span>
+                    <strong id="studentCount">-</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Subjects</span>
+                    <strong id="subjectCount">-</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Class Average</span>
+                    <strong id="classAverage">-</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Median Average</span>
+                    <strong id="medianAverage">-</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Standard Deviation</span>
+                    <strong id="stdDev">-</strong>
+                </article>
+                <article class="stat-card">
+                    <span>Class Pass Rate</span>
+                    <strong id="passRate">-</strong>
+                </article>
+            </div>
+
+            <section class="panel">
+                <h2>Performance Insights</h2>
+                <ul id="insights"></ul>
+            </section>
+
+            <div class="charts-grid">
+                <section class="panel">
+                    <h2>Average Marks by Subject</h2>
+                    <canvas id="subjectChart"></canvas>
+                </section>
+                <section class="panel">
+                    <h2>Student Average Comparison</h2>
+                    <canvas id="studentChart"></canvas>
+                </section>
+            </div>
+
+            <section class="panel">
+                <h2>Subject Statistics</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Average</th>
+                                <th>Median</th>
+                                <th>Std. Dev.</th>
+                                <th>Highest</th>
+                                <th>Lowest</th>
+                                <th>Pass Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subjectTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Student Results</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Total</th>
+                                <th>Average</th>
+                                <th>Grade</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
