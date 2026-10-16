@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Analyzer | Student Performance</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js library for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>📊 Marks Analyzer</h1>
+        <p>Analyze your academic performance with data</p>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Enter Your Marks</h2>
+
+            <form id="marks-form">
+                <label for="student-name">Student Name</label>
+                <input type="text" id="student-name" placeholder="Enter your name" required>
+
+                <label for="subject-count">Number of Subjects</label>
+                <select id="subject-count">
+                    <option value="3">3 Subjects</option>
+                    <option value="4">4 Subjects</option>
+                    <option value="5" selected>5 Subjects</option>
+                    <option value="6">6 Subjects</option>
+                </select>
+
+                <div id="subjects-container"></div>
+
+                <button type="submit">Analyze Performance</button>
+            </form>
+
+            <p id="error-message" role="alert"></p>
+        </section>
+
+        <section id="results" class="hidden">
+            <h2 id="student-heading">Performance Dashboard</h2>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <p>Total Marks</p>
+                    <h3 id="total-marks">0</h3>
+                </article>
+
+                <article class="stat-card">
+                    <p>Average Marks</p>
+                    <h3 id="average-marks">0</h3>
+                </article>
+
+                <article class="stat-card">
+                    <p>Percentage</p>
+                    <h3 id="percentage">0%</h3>
+                </article>
+
+                <article class="stat-card">
+                    <p>Overall Grade</p>
+                    <h3 id="overall-grade">-</h3>
+                </article>
+            </div>
+
+            <div class="charts-grid">
+                <article class="chart-card">
+                    <h3>Subject-wise Marks</h3>
+                    <canvas id="marks-chart"></canvas>
+                </article>
+
+                <article class="chart-card">
+                    <h3>Grade Distribution</h3>
+                    <canvas id="grade-chart"></canvas>
+                </article>
+            </div>
+
+            <section class="insights-card">
+                <h3>📈 Performance Insights</h3>
+                <ul id="insights-list"></ul>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>Marks Analyzer | Built with JavaScript and Chart.js</p>
+    </footer>
+</body>
+
+</html>
