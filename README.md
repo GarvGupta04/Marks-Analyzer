@@ -1,8 +1,11 @@
 # 📊 Marks Analyzer Pro
 
-A student performance analysis web application that combines **web development, data visualization, and Python-based data analysis** to evaluate individual student marks and analyze an entire class.
+**Live Demo:** [Try Marks Analyzer Pro](https://marks-analyzer-d2rv.onrender.com/)  
+**GitHub Repository:** [GarvGupta04/Marks-Analyzer](https://github.com/GarvGupta04/Marks-Analyzer)
 
-The project allows users to enter marks manually or upload a CSV file containing multiple students' marks to generate statistical insights, performance charts, and subject-wise comparisons.
+Marks Analyzer Pro is a full-stack student performance analysis web application that combines **web development, data visualization, and data science** to analyze individual student marks and entire classes.
+
+Users can enter marks manually or upload a CSV file containing multiple students' marks to generate performance reports, statistical insights, and subject-wise comparisons.
 
 ## 🚀 Features
 
@@ -23,13 +26,13 @@ The project allows users to enter marks manually or upload a CSV file containing
 - Display student results in a structured table.
 
 ### 📈 Data Visualization
-- Bar chart comparing average marks across subjects.
-- Bar chart comparing student averages.
-- Dashboard displaying key performance indicators.
-- Automatically update results when a new CSV file is uploaded.
+- Compare average marks across subjects.
+- Compare student averages using bar charts.
+- View key performance indicators in a dashboard.
+- Update results when a new CSV file is uploaded.
 
 ### ✅ Data Validation
-- Validate uploaded CSV file format.
+- Validate uploaded CSV files.
 - Check student names and subject columns.
 - Reject missing, non-numeric, or out-of-range marks.
 - Display error messages for invalid input.
@@ -41,20 +44,31 @@ The project allows users to enter marks manually or upload a CSV file containing
 | HTML5 | Webpage structure |
 | CSS3 | Styling and responsive design |
 | JavaScript | Frontend logic and API communication |
-| Chart.js | Interactive charts |
+| Chart.js | Interactive data visualization |
 | Python | Backend processing |
-| Flask | Backend API and web server |
+| Flask | Web server and API development |
 | Pandas | CSV processing and statistical analysis |
+| Gunicorn | Production application server |
 | CSV | Student marks data format |
-| GitHub | Version control and project hosting |
+| GitHub | Version control and source code hosting |
+| Render | Application deployment and hosting |
+
+## 🌐 Live Application
+
+Try the deployed application:
+
+- **Main Analyzer:** [Open Marks Analyzer Pro](https://marks-analyzer-d2rv.onrender.com/)
+- **Class Analysis Dashboard:** [Analyze an Entire Class](https://marks-analyzer-d2rv.onrender.com/class-analysis)
+
+*Note: The free hosting service may take some time to respond after a period of inactivity.*
 
 ## 📂 Project Structure
 
 ```text
-marks-analyzer/
+Marks-Analyzer/
 │
 ├── index.html              # Individual marks analyzer
-├── style.css               # Original app styling
+├── style.css               # Main application styling
 ├── script.js               # Individual analysis logic
 │
 ├── class-analysis.html     # Class analysis dashboard
@@ -71,14 +85,12 @@ marks-analyzer/
 
 ### 1. Clone the repository
 
-Replace `YOUR-USERNAME` with your GitHub username.
-
 ```bash
-git clone https://github.com/YOUR-USERNAME/marks-analyzer.git
-cd marks-analyzer
+git clone https://github.com/GarvGupta04/Marks-Analyzer.git
+cd Marks-Analyzer
 ```
 
-Alternatively, download the repository as a ZIP file from GitHub and open the extracted folder in your editor.
+Alternatively, download the repository as a ZIP file from GitHub and extract it.
 
 ### 2. Check Python installation
 
@@ -88,33 +100,33 @@ python3 --version
 
 Python 3 must be installed on your system.
 
-### 3. Install dependencies
+### 3. Create a virtual environment (recommended)
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 4. Install dependencies
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-The project uses Flask to serve the application and Pandas to process CSV files.
+The `requirements.txt` file should include Flask, Pandas, and Gunicorn.
 
-### 4. Start the application
+### 5. Start the application
 
 ```bash
 python3 app.py
 ```
 
-### 5. Open the application
+### 6. Open the application
 
-Visit the following address in your browser:
+Visit these addresses in your browser:
 
-```text
-http://localhost:5000
-```
-
-Open the class analysis dashboard directly at:
-
-```text
-http://localhost:5000/class-analysis
-```
+- Main application: `http://localhost:5000`
+- Class analysis dashboard: `http://localhost:5000/class-analysis`
 
 **Note:** Keep the Terminal running while using the application locally.
 
@@ -133,33 +145,28 @@ Anaya Singh,32,55,41,38,60
 Ishaan Rao,76,81,69,72,78
 ```
 
-**Requirements:**
+### CSV Requirements
 - Use `Student` as the first column header.
 - Use numeric marks between 0 and 100.
-- Ensure every student has a name and every mark is valid.
+- Ensure every student has a name.
+- Ensure every mark is valid and present.
 - Save the file in CSV format.
 
 ## 📊 Statistical Analysis
-
-The application calculates the following metrics:
 
 | Metric | Description |
 |---|---|
 | Total Marks | Sum of a student's subject marks |
 | Average | Mean of a student's marks |
-| Median | Middle value of the sorted observations |
-| Standard Deviation | Measures how spread out the values are |
+| Median | Middle value of sorted observations |
+| Standard Deviation | Measures the spread of values |
 | Highest and Lowest Marks | Maximum and minimum values |
-| Pass Percentage | Percentage of students who pass all subjects |
+| Pass Percentage | Percentage of students passing all subjects |
 | Subject Average | Mean mark obtained in a particular subject |
 
-The class median and standard deviation are calculated using student averages. Subject-level statistics are calculated using the marks obtained in each subject.
-
-The application uses population standard deviation for class and subject analysis.
+The class median and standard deviation are calculated using student averages. Subject-level statistics use marks obtained in each subject. The application uses population standard deviation for class and subject analysis.
 
 ## 🏆 Grading System
-
-The individual and class analyzers use the following grade thresholds:
 
 | Average Marks | Grade |
 |---|---|
@@ -176,7 +183,7 @@ A student passes only when they score at least 40 marks in every subject.
 
 ## 🧪 Sample Results
 
-For the included sample dataset, the class analyzer should report approximately:
+For the included five-student sample dataset, the class analyzer should report approximately:
 
 | Metric | Expected Result |
 |---|---:|
@@ -190,11 +197,9 @@ For the included sample dataset, the class analyzer should report approximately:
 
 ## 🧠 Data Science Concepts Demonstrated
 
-This project demonstrates practical applications of:
-
 - Data collection and CSV ingestion
 - Data cleaning and input validation
-- Exploratory data analysis (EDA)
+- Exploratory Data Analysis (EDA)
 - Descriptive statistics
 - Mean, median, and standard deviation
 - Subject-wise and student-wise comparisons
@@ -210,29 +215,31 @@ This project demonstrates practical applications of:
 - Compare performance across multiple examinations.
 - Support larger datasets and class-wise filtering.
 - Add student performance trends over time.
-- Extend the analysis with NumPy, SciPy, and more advanced statistical methods.
-- Explore predictive analytics for identifying students who may need additional support.
+- Introduce more advanced statistical methods.
+- Explore predictive analytics to identify students who may need additional academic support.
 
 ## 🎯 Learning Outcomes
 
-By developing this project, I gained practical experience in:
+Through this project, I gained practical experience in:
 
 - Building interactive web applications.
 - Connecting a JavaScript frontend to a Python backend.
-- Using Flask to create API endpoints.
+- Developing API endpoints using Flask.
 - Processing datasets using Pandas.
-- Applying statistical methods to real-world-style data.
+- Applying statistical methods to student performance data.
 - Visualizing data using Chart.js.
-- Organizing and documenting a full-stack project.
+- Deploying a full-stack application using Render.
+- Organizing and documenting a software project.
 
 ## 👨‍💻 Author
 
-**Garv Gupta**
-
+**Garv Gupta**  
 B.Tech CSE — Data Science  
 VIT Vellore
 
 - GitHub: [GarvGupta04](https://github.com/GarvGupta04)
+- Project Repository: [Marks-Analyzer](https://github.com/GarvGupta04/Marks-Analyzer)
+- Live Demo: [Marks Analyzer Pro](https://marks-analyzer-d2rv.onrender.com/)
 
 ## 📜 License
 
